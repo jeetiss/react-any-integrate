@@ -1,30 +1,37 @@
-import { useReducer, Children, cloneElement } from "react";
-import { useScript } from "@jeetiss/react-use-script";
+import { createContext, createElement, useContext, useReducer } from "react"
+import { useScript } from "@jeetiss/react-use-script"
 
-const merge = (prev, next) => ({ ...prev, ...next });
+const merge = (prev, next) => ({ ...prev, ...next })
+
+const StateContext = createContext()
 
 const Integration = ({ src, children }) => {
-  const [state, setState] = useReducer(merge, { loading: true, error: null });
+  const [state, setState] = useReducer(merge, { loading: true, error: null })
 
   useScript(src, {
     onLoad: () => setState({ loading: false }),
-    onError: () => setState({ error: true })
-  });
+    onError: () => setState({ loading: false, error: true }),
+  })
 
-  return Children.map(children, (child, index) =>
-    cloneElement(child, { state, key: index })
-  );
-};
-
-const Loading = ({ state, children }) => (state.loading ? children : null);
-const Error = ({ state, children }) => (state.error ? children : null);
-
-const Initial = ({ state, children }) =>
-  !state.error ? children : null
-
-export {
-  Initial,
-  Integration,
-  Error,
-  Loading
+  return createElement(StateContext.Provider, { value: state }, children)
 }
+
+const Loading = ({ children }) => {
+  const state = useContext(StateContext)
+
+  return state.loading ? children : null
+}
+
+const Error = ({ children }) => {
+  const state = useContext(StateContext)
+
+  return state.error ? children : null
+}
+
+const Initial = ({ children }) => {
+  const state = useContext(StateContext)
+
+  return !state.error ? children : null
+}
+
+export { Initial, Integration, Error, Loading }
