@@ -1,6 +1,6 @@
 {
   "name": "@jeetiss/react-any-integrate",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "integrate any embeded srcipt into react component",
   "main": "dist/index-cjs.js",
   "module": "dist/index-esm.js",
@@ -10,7 +10,7 @@
     "react": "^16.8.0"
   },
   "dependencies": {
-    "@jeetiss/react-use-script": "^0.0.1"
+    "@jeetiss/react-use-script": "^0.0.2"
   },
   "devDependencies": {
     "prettier": "^1.17.1",
