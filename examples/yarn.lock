@@ -773,14 +773,14 @@
     yargs "^9.0.0"
 
 "@jeetiss/react-any-integrate@../":
-  version "0.0.2"
-  dependencies:
-    "@jeetiss/react-use-script" "^0.0.1"
-
-"@jeetiss/react-use-script@^0.0.1":
   version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@jeetiss/react-use-script/-/react-use-script-0.0.1.tgz#ecdd5f0b54848421990fa83af893b23377fc39c0"
-  integrity sha512-Gxsrw7Y+tdg0prZAdad6TLubtb9AToWuVOzYD0NBZz7VpzTRDI1eZNqtrKPANcnuVyicSFQm+SwR31tUEEmRDQ==
+  dependencies:
+    "@jeetiss/react-use-script" "^0.0.2"
+
+"@jeetiss/react-use-script@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@jeetiss/react-use-script/-/react-use-script-0.0.2.tgz#da654cf35093abd8c5aa7fb022a155ac327d0b4e"
+  integrity sha512-vwEwtZDDuAurc7CB2fC5+BZrJtqGX1uh1bBLMQZ4YgleGS9KP7GD0Uju+bGH2XobEu59J/cVDquQr3+BohuNEA==
 
 "@mikaelkristiansson/domready@^1.0.9":
   version "1.0.9"
